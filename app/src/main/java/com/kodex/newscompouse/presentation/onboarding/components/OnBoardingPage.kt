@@ -1,5 +1,6 @@
 package com.kodex.newscompouse.presentation.onboarding.components
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -55,11 +56,12 @@ fun OnBoardingPage (
 }
 
     @Preview(showBackground = true)
+    @Preview(uiMode = UI_MODE_NIGHT_YES, showBackground = true)
     @Composable
      fun OnBoardingPagePreview() {
         NewsCompouseTheme {
             OnBoardingPage(
-                page = pages[2]
+                page = pages[1]
             )
         }
     }

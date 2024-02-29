@@ -3,6 +3,8 @@ package com.kodex.newscompouse
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -11,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.kodex.newscompouse.presentation.onboarding.OnBoardingScreen
 import com.kodex.newscompouse.ui.theme.NewsCompouseTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +22,11 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
         setContent {
             NewsCompouseTheme {
-
+                Box(modifier = Modifier
+                    .background(color = MaterialTheme
+                        .colorScheme.background)) {
+                    OnBoardingScreen()
+                }
             }
         }
     }
