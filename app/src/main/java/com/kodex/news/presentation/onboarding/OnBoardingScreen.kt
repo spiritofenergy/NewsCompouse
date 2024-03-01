@@ -28,7 +28,9 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+event: (OnBoardingEvent) ->Unit
+) {
         Column(modifier = Modifier.fillMaxSize()) {
             val pagerState = rememberPagerState(initialPage = 0) {
                 pages.size
@@ -36,9 +38,9 @@ fun OnBoardingScreen() {
             val buttonState = remember {
                 derivedStateOf {
                     when(pagerState.currentPage){
-                        0 -> listOf("", "Next")
-                        1 -> listOf("Back", "Next")
-                        2 -> listOf("Back", "Get Started")
+                        0 -> listOf("", "Вперед")
+                        1 -> listOf("Назад", "Вперед")
+                        2 -> listOf("Назад", "Начать")
                         else -> listOf("", "")
                     }
                 }
@@ -82,8 +84,8 @@ fun OnBoardingScreen() {
                     text = buttonState.value[1],
                     onClick = {
                         scope.launch {
-                            if (pagerState.currentPage == 3) {
-                                //TODO: Navigate to HomeScreen
+                            if (pagerState.currentPage == 2) {
+                                    event(OnBoardingEvent.SaveAppEntry)
                             }else{
                                 pagerState.animateScrollToPage(
                                     page = pagerState.currentPage + 1
