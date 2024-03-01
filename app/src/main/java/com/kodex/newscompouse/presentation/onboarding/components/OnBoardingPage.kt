@@ -61,7 +61,7 @@ fun OnBoardingPage (
      fun OnBoardingPagePreview() {
         NewsCompouseTheme {
             OnBoardingPage(
-                page = pages[1]
+                page = pages[0]
             )
         }
     }

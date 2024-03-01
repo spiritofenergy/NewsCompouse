@@ -10,18 +10,18 @@ data class Page(
 )
 val pages = listOf(
     Page(
-        title = "Lorem Ipsum is simply dummy",
-        description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title = "Новости фондового рынка.",
+        description = "Актуальные новости фондового рынка с аналитикой от экспертов БКС Экспресс. Читайте биржевые новости и обзоры с техническим анализом популярных эмитентов, а также торговые рекомендации по актуальным финансовым инструментам. Сбербанк Роснефть ЛУКОЙЛ НОВАТЭК Газпром нефть Газпром.",
         image = R.drawable.onboarding1
     ),
     Page(
-        title = "Lorem Ipsum is simply dummy",
-        description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title = "Съездить в Китай из России",
+        description = "Больше всего рейсов в Китай из Москвы. До Пекина вы долетите за 40 000–50 000 рублей туда и обратно. Без пересадок время в пути составит около 8 часов. Рейсов много, поэтому составить комфортный маршрут легко.",
         image = R.drawable.onboarding2
     ),
     Page(
-        title = "Lorem Ipsum is simply dummy",
-        description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title = "Заготовки в впрок.",
+        description = "Ежедневно мы публикуем рецепты консервации, заготовок, полезные советы и т.п. У нас очень много хороших проверенных рецептов, всегда можно получить ответ на вопрос и поделится своими достижениями в кулинарии. Вы всегда будете с рецептами в сезон заготовок.",
         image = R.drawable.onboarding3
     )
 )
