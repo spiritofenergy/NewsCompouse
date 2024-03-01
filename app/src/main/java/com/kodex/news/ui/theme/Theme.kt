@@ -1,4 +1,4 @@
-package com.kodex.newscompouse.ui.theme
+package com.kodex.news.ui.theme
 
 import android.app.Activity
 import android.os.Build

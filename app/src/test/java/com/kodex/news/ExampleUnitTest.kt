@@ -1,4 +1,4 @@
-package com.kodex.newscompouse
+package com.kodex.news
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.kodex.newscompouse.presentation.common
+package com.kodex.news.presentation.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import com.kodex.newscompouse.presentation.onboarding.Dimens.IndicatorSize
-import com.kodex.newscompouse.ui.theme.BlueGray
+import com.kodex.news.presentation.onboarding.Dimens.IndicatorSize
+import com.kodex.news.ui.theme.BlueGray
 
 @Composable
 fun PagerIndicator(

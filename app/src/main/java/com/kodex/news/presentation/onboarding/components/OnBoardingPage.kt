@@ -1,4 +1,4 @@
-package com.kodex.newscompouse.presentation.onboarding.components
+package com.kodex.news.presentation.onboarding.components
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
@@ -17,12 +17,12 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import com.kodex.news.presentation.onboarding.Dimens.MediumPadding1
+import com.kodex.news.presentation.onboarding.Dimens.MediumPadding2
+import com.kodex.news.presentation.onboarding.Page
+import com.kodex.news.presentation.onboarding.pages
+import com.kodex.news.ui.theme.NewsCompouseTheme
 import com.kodex.newscompouse.R
-import com.kodex.newscompouse.presentation.onboarding.Dimens.MediumPadding1
-import com.kodex.newscompouse.presentation.onboarding.Dimens.MediumPadding2
-import com.kodex.newscompouse.presentation.onboarding.Page
-import com.kodex.newscompouse.presentation.onboarding.pages
-import com.kodex.newscompouse.ui.theme.NewsCompouseTheme
 
 @Composable
 fun OnBoardingPage (

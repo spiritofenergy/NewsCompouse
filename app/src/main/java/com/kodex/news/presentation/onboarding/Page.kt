@@ -1,4 +1,4 @@
-package com.kodex.newscompouse.presentation.onboarding
+package com.kodex.news.presentation.onboarding
 
 import androidx.annotation.DrawableRes
 import com.kodex.newscompouse.R
