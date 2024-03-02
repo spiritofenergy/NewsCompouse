@@ -1,6 +1,6 @@
-package com.kodex.news.domen.usercases
+package com.kodex.news.domain.usercases.app_entry
 
-import com.kodex.news.domen.manager.LocalUserManager
+import com.kodex.news.domain.manager.LocalUserManager
 import kotlinx.coroutines.flow.Flow
 
 class ReadAppEntry(

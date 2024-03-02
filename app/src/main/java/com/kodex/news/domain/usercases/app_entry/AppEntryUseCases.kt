@@ -1,4 +1,4 @@
-package com.kodex.news.domen.usercases
+package com.kodex.news.domain.usercases.app_entry
 
 data class AppEntryUseCases(
     val readAppEntry: ReadAppEntry,

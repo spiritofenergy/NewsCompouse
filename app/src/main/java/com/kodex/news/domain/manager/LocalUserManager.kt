@@ -1,4 +1,4 @@
-package com.kodex.news.domen.manager
+package com.kodex.news.domain.manager
 
 import kotlinx.coroutines.flow.Flow
 

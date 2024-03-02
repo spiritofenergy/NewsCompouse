@@ -21,7 +21,7 @@ import com.kodex.news.presentation.onboarding.Dimens.MediumPadding1
 import com.kodex.news.presentation.onboarding.Dimens.MediumPadding2
 import com.kodex.news.presentation.onboarding.Page
 import com.kodex.news.presentation.onboarding.pages
-import com.kodex.news.ui.theme.NewsTheme
+import com.kodex.news.ui.theme.NewsAppTheme
 import com.kodex.newscompouse.R
 
 @Composable
@@ -59,7 +59,7 @@ fun OnBoardingPage (
     @Preview(uiMode = UI_MODE_NIGHT_YES, showBackground = true)
     @Composable
      fun OnBoardingPagePreview() {
-        NewsTheme {
+        NewsAppTheme {
             OnBoardingPage(
                 page = pages[0]
             )

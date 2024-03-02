@@ -1,6 +1,6 @@
-package com.kodex.news.domen.usercases
+package com.kodex.news.domain.usercases.app_entry
 
-import com.kodex.news.domen.manager.LocalUserManager
+import com.kodex.news.domain.manager.LocalUserManager
 
 class SaveAppEntry(
     private val localUserManager: LocalUserManager

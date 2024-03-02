@@ -2,7 +2,7 @@ package com.kodex.news.presentation.onboarding
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kodex.news.domen.usercases.AppEntryUseCases
+import com.kodex.news.domain.usercases.app_entry.AppEntryUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -2,15 +2,14 @@ package com.kodex.news.di
 
 import android.app.Application
 import com.kodex.news.data.manager.LocalUserManagerImpl
-import com.kodex.news.domen.manager.LocalUserManager
-import com.kodex.news.domen.usercases.AppEntryUseCases
-import com.kodex.news.domen.usercases.ReadAppEntry
-import com.kodex.news.domen.usercases.SaveAppEntry
+import com.kodex.news.domain.manager.LocalUserManager
+import com.kodex.news.domain.usercases.app_entry.AppEntryUseCases
+import com.kodex.news.domain.usercases.app_entry.ReadAppEntry
+import com.kodex.news.domain.usercases.app_entry.SaveAppEntry
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import java.lang.Appendable
 import javax.inject.Singleton
 
 @Module
