@@ -14,6 +14,8 @@ import com.kodex.news.presentation.home.HomeScreen
 import com.kodex.news.presentation.home.HomeViewModel
 import com.kodex.news.presentation.onboarding.OnBoardingScreen
 import com.kodex.news.presentation.onboarding.OnBoardingViewModel
+import com.kodex.news.presentation.search.SearchScreen
+import com.kodex.news.presentation.search.SearchViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
@@ -40,12 +42,10 @@ fun NavGraph(
             startDestination = Route.NewsNavigationScreen.route
         ){
             composable(route = Route.NewsNavigationScreen.route){
-                  val  viewModel : HomeViewModel = hiltViewModel()
-                    val articles = viewModel.news.collectAsLazyPagingItems()
-                HomeScreen(articles = articles, navigate = {
+                  val  viewModel : SearchViewModel = hiltViewModel()
+                  SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
 
-                })
+                }
             }
         }
     }
-}

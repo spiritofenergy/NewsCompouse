@@ -11,6 +11,7 @@ import com.kodex.news.domain.usercases.app_entry.ReadAppEntry
 import com.kodex.news.domain.usercases.app_entry.SaveAppEntry
 import com.kodex.news.domain.usercases.news.GetNews
 import com.kodex.news.domain.usercases.news.NewsUseCases
+import com.kodex.news.domain.usercases.news.SearchNews
 import com.kodex.news.ui.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -64,7 +65,8 @@ object AppModule {
         newsRepository: NewsRepository
     ): NewsUseCases{
         return  NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 }
