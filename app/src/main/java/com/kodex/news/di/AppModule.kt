@@ -1,6 +1,10 @@
 package com.kodex.news.di
 
 import android.app.Application
+import androidx.room.Room
+import com.kodex.news.data.local.NewsDao
+import com.kodex.news.data.local.NewsDatabase
+import com.kodex.news.data.local.NewsTypeConvertor
 import com.kodex.news.data.manager.LocalUserManagerImpl
 import com.kodex.news.data.remote.NewsApi
 import com.kodex.news.data.repository.NewsRepositoryImpl
@@ -9,9 +13,15 @@ import com.kodex.news.domain.repository.NewsRepository
 import com.kodex.news.domain.usercases.app_entry.AppEntryUseCases
 import com.kodex.news.domain.usercases.app_entry.ReadAppEntry
 import com.kodex.news.domain.usercases.app_entry.SaveAppEntry
+import com.kodex.news.domain.usercases.news.DeleteArticle
 import com.kodex.news.domain.usercases.news.GetNews
 import com.kodex.news.domain.usercases.news.NewsUseCases
+import com.kodex.news.domain.usercases.news.SearchNews
+import com.kodex.news.domain.usercases.news.SelectArticle
+import com.kodex.news.domain.usercases.news.SelectArticles
+import com.kodex.news.domain.usercases.news.UpsertArticle
 import com.kodex.news.ui.util.Constants.BASE_URL
+import com.kodex.news.ui.util.Constants.NEWS_DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -61,10 +71,34 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsUseCase(
-        newsRepository: NewsRepository
+        newsRepository: NewsRepository,
+        newsDao: NewsDao
     ): NewsUseCases{
         return  NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository),
+            deleteArticle = DeleteArticle(newsDao),
+            upsertArticle = UpsertArticle(newsDao),
+            selectArticles = SelectArticles(newsDao),
+            selectArticle = SelectArticle(newsDao)
         )
     }
+    @Provides
+    @Singleton
+    fun provideNewsDatabase (
+        application: Application
+    ): NewsDatabase{
+        return Room.databaseBuilder(
+            context = application,
+            klass = NewsDatabase::class.java,
+            name = NEWS_DATABASE_NAME
+        ).addTypeConverter(NewsTypeConvertor())
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+    @Provides
+    @Singleton
+    fun provideNewsDao(
+        newsDatabase: NewsDatabase
+    ): NewsDao = newsDatabase.newsDao
 }
