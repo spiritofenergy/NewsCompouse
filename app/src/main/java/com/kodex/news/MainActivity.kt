@@ -13,11 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
+import androidx.lifecycle.lifecycleScope
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.kodex.news.data.local.NewsDao
+import com.kodex.news.domain.model.Article
+import com.kodex.news.domain.model.Source
 import com.kodex.news.domain.usercases.app_entry.AppEntryUseCases
 import com.kodex.news.presentation.navigation.NavGraph
 import com.kodex.news.ui.theme.NewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -26,9 +31,13 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var useCases: AppEntryUseCases
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window,false)
+
+
+
         installSplashScreen().apply {
             setKeepOnScreenCondition{
                 viewModel.splashCondition
