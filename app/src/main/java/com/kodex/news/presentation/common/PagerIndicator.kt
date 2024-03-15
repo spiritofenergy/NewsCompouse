@@ -5,14 +5,19 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.magnifier
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import com.kodex.news.presentation.onboarding.Dimens.IndicatorSize
+import com.kodex.news.presentation.onboarding.components.OnBoardingPage
+import com.kodex.news.presentation.onboarding.pages
 import com.kodex.news.ui.theme.BlueGray
+import com.kodex.news.ui.theme.NewsAppTheme
 
 @Composable
 fun PagerIndicator(
@@ -34,4 +39,9 @@ fun PagerIndicator(
 
         }
     }
-}
+}@Preview(showBackground = true)
+@Composable
+fun PageIndicatorPreview() {
+
+
+    }

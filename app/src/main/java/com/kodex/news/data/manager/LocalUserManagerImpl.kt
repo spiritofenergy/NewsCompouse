@@ -12,7 +12,9 @@ import com.kodex.news.ui.util.Constants.USER_SETTINGS
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class LocalUserManagerImpl(private val context: Context) : LocalUserManager {
+class LocalUserManagerImpl(
+    private val context: Context
+    ) : LocalUserManager {
 
     override suspend fun saveAppEntry() {
        context.dataStore.edit { settings ->

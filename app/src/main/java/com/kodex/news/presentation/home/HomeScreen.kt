@@ -54,12 +54,12 @@ fun HomeScreen(
                     .padding(top = MediumPadding1)
                     .statusBarsPadding()
             ) {
-                Image(painter = painterResource(id = R.drawable.logo3), contentDescription = null,
+               /* Image(painter = painterResource(id = R.drawable.logo3), contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(30.dp)
                     .padding(horizontal = MediumPadding1)
-                )
+                )*/
                 Spacer(modifier = Modifier.height(MediumPadding1))   
                 
                 SearchBar(

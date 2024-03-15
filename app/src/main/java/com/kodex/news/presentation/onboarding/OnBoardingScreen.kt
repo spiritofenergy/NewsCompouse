@@ -1,5 +1,6 @@
 package com.kodex.news.presentation.onboarding
 
+
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,18 +19,27 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+
 import com.kodex.news.presentation.common.NewsButton
 import com.kodex.news.presentation.common.NewsTextButton
 import com.kodex.news.presentation.common.PagerIndicator
+import com.kodex.news.presentation.navigation.NavGraph
+import com.kodex.news.presentation.navigation.Route
 import com.kodex.news.presentation.onboarding.Dimens.MediumPadding2
 import com.kodex.news.presentation.onboarding.components.OnBoardingPage
 import kotlinx.coroutines.launch
+import retrofit2.http.Tag
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoardingScreen(
-event: (OnBoardingEvent) ->Unit
+
+event: (OnBoardingEvent
+) ->Unit
 ) {
         Column(modifier = Modifier.fillMaxSize()) {
             val pagerState = rememberPagerState(initialPage = 0) {
@@ -67,12 +77,10 @@ event: (OnBoardingEvent) ->Unit
 
                 val scope = rememberCoroutineScope()
 
-
-
                 if (buttonState.value[0].isNotEmpty()){
                     NewsTextButton(text = buttonState.value[0],
-                    onClick = {
-                        scope.launch {
+                        onClick = {
+                         scope.launch {
                             pagerState.animateScrollToPage(page = pagerState.currentPage - 1)
                         }
 
@@ -81,12 +89,17 @@ event: (OnBoardingEvent) ->Unit
 
                 }
                 NewsButton(
+
                     text = buttonState.value[1],
                     onClick = {
                         scope.launch {
                             if (pagerState.currentPage == 2) {
-                                    event(OnBoardingEvent.SaveAppEntry)
-                            }else{
+                                event(OnBoardingEvent.SaveAppEntry)
+                            }
+                            if (pagerState.currentPage == 3) {
+
+                                event(OnBoardingEvent.SaveAppEntry)
+                             }else{
                                 pagerState.animateScrollToPage(
                                     page = pagerState.currentPage + 1
                                 )

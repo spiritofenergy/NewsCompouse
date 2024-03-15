@@ -1,21 +1,15 @@
-package com.kodex.news.domain.model
+package com.kodex.news.data.remote.dto
 
 
-import android.os.Parcelable
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
-@Entity
 data class Article(
     @SerializedName("author")
     var author: String,
     @SerializedName("content")
-    var content: String,
+    var content: Any,
     @SerializedName("description")
-    var description: String,
+    var description: Any,
     @SerializedName("publishedAt")
     var publishedAt: String,
     @SerializedName("source")
@@ -23,8 +17,7 @@ data class Article(
     @SerializedName("title")
     var title: String,
     @SerializedName("url")
-    @PrimaryKey
     var url: String,
     @SerializedName("urlToImage")
-    var urlToImage: String
-): Parcelable
+    var urlToImage: Any
+)

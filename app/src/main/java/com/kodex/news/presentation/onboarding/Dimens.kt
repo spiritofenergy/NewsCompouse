@@ -9,6 +9,7 @@ object Dimens {
     val ArticleCardSize= 96.dp
     val ExtraSmallPadding=3.dp
     val ExtraSmallPadding2=6.dp
+    val ExtraSmallPadding3=10.dp
     val SmallIconSize = 11.dp
     val IconSize = 20.dp
     val ArticleImageHeight = 240.dp

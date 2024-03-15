@@ -16,6 +16,7 @@ class NewsPagingSource(
         return try {
             val newsResponse = newsApi.getNews(sources = sources, page = page)
             totalNewsCount += newsResponse.articles.size
+            // Удаление дубликатов
             val articles = newsResponse.articles.distinctBy { it.title }
             LoadResult.Page(
                 data = articles,

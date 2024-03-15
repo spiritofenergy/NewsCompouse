@@ -2,6 +2,7 @@ package com.kodex.news.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
@@ -18,6 +19,7 @@ fun NavGraph(
 ) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = startDestination){
+
         navigation(
             route = Route.AppStartNavigation.route,
             startDestination = Route.OnBoardingScreen.route
@@ -31,13 +33,14 @@ fun NavGraph(
                 )
             }
         }
+
         navigation(
             route = Route.NewsNavigation.route,
             startDestination = Route.NewsNavigationScreen.route
         ){
             composable(route = Route.NewsNavigationScreen.route){
-                  NewsNavigator()
-
+                val viewModel: OnBoardingViewModel = hiltViewModel()
+                NewsNavigator()
                 }
             }
         }

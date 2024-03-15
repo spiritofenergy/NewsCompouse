@@ -19,9 +19,13 @@ class BookmarkViewModel @Inject constructor(
     private val _state = mutableStateOf(BookMarkState())
     val state: State<BookMarkState> = _state
 
+    init {
+        getArticles()
+    }
+
     private fun getArticles(){
         newsUseCases.selectArticles().onEach {
-            _state.value = _state.value.copy(articles = it)
+            _state.value = _state.value.copy(articles = it.asReversed())
         }.launchIn(viewModelScope)
     }
 }

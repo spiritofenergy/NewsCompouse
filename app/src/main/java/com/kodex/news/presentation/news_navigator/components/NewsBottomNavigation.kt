@@ -80,8 +80,8 @@ fun NewsBottomNavigationItemPreview(){
         NewsBottomNavigation(
             items = listOf(
                 BottomNavigationItem(icon = R.drawable.ic_home, text = "Home"),
-                BottomNavigationItem(icon = R.drawable.ic_search, text = "Home"),
-                BottomNavigationItem(icon = R.drawable.ic_bookmark, text = "Home")
+                BottomNavigationItem(icon = R.drawable.ic_search, text = "Search"),
+                BottomNavigationItem(icon = R.drawable.ic_bookmark, text = "BookMark")
             ),
             selected = 0,
             onItemClick = {})

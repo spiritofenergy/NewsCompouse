@@ -82,12 +82,20 @@ fun handlePagingResult(articles: LazyPagingItems<Article>): Boolean {
 
     return when {
         loadState.refresh is LoadState.Loading -> {
+            //Эффект мерцания
             ShimmerEffect()
             false
         }
 
         error != null -> {
+            //Пустой лист
             EmptyScreen(error = error)
+            false
+        }
+
+        articles.itemCount == 0 ->{
+            //Пустой лист
+            EmptyScreen()
             false
         }
 
